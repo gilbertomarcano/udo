@@ -148,10 +148,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="data-structures.cpp" />
+    <ClCompile Include="unit-2\node.cpp" />
     <ClCompile Include="unit-1\static_queue.cpp" />
     <ClCompile Include="unit-1\static_stack.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="unit-2\node.hpp" />
     <ClInclude Include="unit-1\static_queue.hpp" />
     <ClInclude Include="unit-1\static_stack.hpp" />
   </ItemGroup>

@@ -24,12 +24,18 @@
     <ClCompile Include="unit-1\static_stack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="unit-2\node.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="unit-1\static_queue.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="unit-1\static_stack.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="unit-2\node.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

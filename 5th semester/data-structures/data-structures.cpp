@@ -3,16 +3,31 @@
 
 #include <iostream>
 
-#include "unit-1/static_stack.hpp"
-#include "unit-1/static_queue.hpp"
+//#include "unit-1/static_stack.hpp"
+//#include "unit-1/static_queue.hpp"
+#include "unit-2/node.hpp"
 
 int main()
 {
     using namespace std;
     cout << "Hello World!\n";
-    static_queue<int> q;
-    cout << q << endl;
-    
+    node<int> a(5, nullptr, nullptr);
+
+    node<int> b(77, nullptr, nullptr);
+
+    node<int>* ptr = &b;
+
+    cout << "&ptr: " << &ptr << endl;
+    cout << "ptr:  " << ptr << endl;
+    cout << "&b: " << &b << endl;
+
+    cout << "\n\n\n";
+    cout << *ptr << endl;
+
+    a.set_prev(ptr);
+    cout << a << endl;
+    cout << a.get_prev() << endl;
+    cout << *a.get_prev() << endl;
 
 }
 

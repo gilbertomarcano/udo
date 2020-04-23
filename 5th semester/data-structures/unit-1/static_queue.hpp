@@ -14,7 +14,7 @@
 	Type
 	The element data type to be stored in the queue. */
 template <class Type>
-class static_queue
+struct static_queue
 {
 	/* Members */
 
