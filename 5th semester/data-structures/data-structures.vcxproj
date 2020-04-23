@@ -148,10 +148,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="data-structures.cpp" />
-    <ClCompile Include="static_stack.cpp" />
+    <ClCompile Include="unit-1\static_queue.cpp" />
+    <ClCompile Include="unit-1\static_stack.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="static_stack.hpp" />
+    <ClInclude Include="unit-1\static_queue.hpp" />
+    <ClInclude Include="unit-1\static_stack.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

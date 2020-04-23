@@ -3,17 +3,16 @@
 
 #include <iostream>
 
-#include "static_stack.hpp"
+#include "unit-1/static_stack.hpp"
+#include "unit-1/static_queue.hpp"
 
 int main()
 {
     using namespace std;
     cout << "Hello World!\n";
-    static_stack <int> s;
-
+    static_queue<int> q;
+    cout << q << endl;
     
-    cout << s << endl;
-
 
 }
 

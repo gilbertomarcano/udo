@@ -18,12 +18,18 @@
     <ClCompile Include="data-structures.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="static_stack.cpp">
+    <ClCompile Include="unit-1\static_queue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="unit-1\static_stack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="static_stack.hpp">
+    <ClInclude Include="unit-1\static_queue.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="unit-1\static_stack.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

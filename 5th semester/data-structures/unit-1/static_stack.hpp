@@ -44,13 +44,13 @@ public:
     /* Returns the number of elements in the stack.  */
     unsigned int size() const;
 
-    /* 	Returns a constant reference to an element at the top of the stack. */
+    /* Returns a constant reference to an element at the top of the stack. */
     const Type& top() const;
 
-    // Equals operator, O(n)
+    /* Equals operator */
     static_stack<Type>& operator=(static_stack<Type>& right);
 
-    // Ostream operator
+    /* Ostream operator */
     friend std::ostream& operator<<(std::ostream& os, static_stack<Type>& stack)
     {
         os << "[";
@@ -62,42 +62,26 @@ public:
         }
 
         static_stack<Type> copy = stack;
-        for (int i = 0, size = stack.size(); i < size; i++)
+        static_stack<Type> reverse_copy;
+        for (unsigned int i = 0, size = stack.size(); i < size; i++)
         {
-            os << copy.pop();
+            reverse_copy.push(copy.pop());
+        }
 
-            i == (size - 1) ? i++ : os << ",";
+        for (unsigned int i = 0, size = stack.size(); i < size; i++)
+        {
+            os << reverse_copy.pop();
+
+            if (i == size - 1) break; else os << ", ";
         }
 
         os << "]";
         return os;
     }
-
-    //// Ostream operator
-    //friend std::ostream& operator<<(std::ostream& os, static_stack<Type>& stack)
-    //{
-    //    if (stack.empty())
-    //    {
-    //        os << "[]";
-    //        return os;
-    //    }
-
-    //    os << "[";
-    //    static_stack<Type> temp(stack);
-    //    for (int i = 0, len = stack.size(); true; i++)
-    //    {
-    //        os << temp.pop();
-    //        if (i == len - 1) break else os << ", ";
-    //    }
-    //    os << "]";
-
-    //    return os;
-    //}
-
 };
 
 /* Tests if a stack is empty.
-    Return value
+    Return Value
     true if the stack is empty; false if the stack is nonempty. */
 template <class Type> bool static_stack<Type>::empty() const
 {
@@ -105,7 +89,7 @@ template <class Type> bool static_stack<Type>::empty() const
 }
 
 /* Removes the element from the top of the stack.
-    Return value
+    Return Value
     The previous last element in the container at the top of the stack. */
 template <class Type> Type static_stack<Type>::pop()
 {
@@ -114,17 +98,16 @@ template <class Type> Type static_stack<Type>::pop()
         throw UNDERFLOW;
     }
 
-    return container_type[size_type--];
+    return container_type[--size_type];
 }
 
 /* Adds an element to the top of the stack.
-
     Parameters
     val
     The element added to the top of the stack. */
 template <class Type> void static_stack<Type>::push(const Type& val)
 {
-    if (size_type + 1 == CAPACITY)
+    if (size_type == CAPACITY)
     {
         throw OVERFLOW;
     }
@@ -133,7 +116,7 @@ template <class Type> void static_stack<Type>::push(const Type& val)
 }
 
 /* Returns the number of elements in the stack.
-    Return value
+    Return Value
     The current length of the stack. */
 template <class Type> unsigned int static_stack<Type>::size() const
 {
@@ -164,6 +147,9 @@ template <class Type> const Type& static_stack<Type>::top() const
     return container_type[size_type - 1];
 }
 
+/* Equals operator 
+    Return Value
+    A copy by value of the right stack. */
 template<class Type> static_stack<Type>& static_stack<Type>::operator=(static_stack<Type>& right)
 {
     size_type = 0;
